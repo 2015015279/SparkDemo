@@ -16,22 +16,22 @@ public class FilteringApples{
         List<Apple> inventory = Arrays.asList(new Apple(80,"green"),
                 new Apple(155, "green"),
                 new Apple(120, "red"));
-
+        System.out.println("inventory  :" + inventory);
         // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
         List<Apple> greenApples = filterApples(inventory, FilteringApples::isGreenApple);
-        System.out.println(greenApples);
+        System.out.println("greenApples :" + greenApples);
 
         // [Apple{color='green', weight=155}]
         List<Apple> heavyApples = filterApples(inventory, FilteringApples::isHeavyApple);
-        System.out.println(heavyApples);
+        System.out.println("heavyApples :" + heavyApples);
 
         // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
         List<Apple> greenApples2 = filterApples(inventory, (Apple a) -> "green".equals(a.getColor()));
-        System.out.println(greenApples2);
+        System.out.println("greenApples2 :" + greenApples2);
 
         // [Apple{color='green', weight=155}]
         List<Apple> heavyApples2 = filterApples(inventory, (Apple a) -> a.getWeight() > 150);
-        System.out.println(heavyApples2);
+        System.out.println("heavyApples2 :" + heavyApples2);
 
         // []
         List<Apple> weirdApples = filterApples(inventory, (Apple a) -> a.getWeight() < 80 ||
