@@ -1,3 +1,26 @@
 2019-09-22 16:35:20  [ main:0 ] - [ DEBUG ]  This is debug message.
 2019-09-22 16:35:20  [ main:1 ] - [ INFO ]  This is info message.
 2019-09-22 16:35:20  [ main:1 ] - [ ERROR ]  This is error message.
+2019-09-26 18:23:40  [ main:0 ] - [ DEBUG ]  field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, value=[Rate of successful kerberos logins and latency (milliseconds)], valueName=Time)
+2019-09-26 18:23:40  [ main:8 ] - [ DEBUG ]  field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, value=[Rate of failed kerberos logins and latency (milliseconds)], valueName=Time)
+2019-09-26 18:23:40  [ main:9 ] - [ DEBUG ]  field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, value=[GetGroups], valueName=Time)
+2019-09-26 18:23:40  [ main:9 ] - [ DEBUG ]  UgiMetrics, User and group related metrics
+2019-09-26 18:23:40  [ main:76 ] - [ DEBUG ]   Creating new Groups object
+2019-09-26 18:23:40  [ main:78 ] - [ DEBUG ]  Trying to load the custom-built native-hadoop library...
+2019-09-26 18:23:40  [ main:79 ] - [ DEBUG ]  Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+2019-09-26 18:23:40  [ main:79 ] - [ DEBUG ]  java.library.path=D:\Software\java\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\IDM Computer Solutions\UltraEdit;D:\Software\Anaconda;D:\Software\Anaconda\Library\mingw-w64\bin;D:\Software\Anaconda\Library\usr\bin;D:\Software\Anaconda\Library\bin;D:\Software\Anaconda\Scripts;C:\Users\wangshengyu1\AppData\Local\Microsoft\WindowsApps;D:\Software\java\bin;D:\Software\java\jre1.8\bin;D:\Software\apache-maven-3.5.4\bin;D:\Software\Mysql\mysql-5.7.21-winx64\bin;;.
+2019-09-26 18:23:40  [ main:79 ] - [ WARN ]  Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-09-26 18:23:40  [ main:80 ] - [ DEBUG ]  Falling back to shell based
+2019-09-26 18:23:40  [ main:80 ] - [ DEBUG ]  Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+2019-09-26 18:23:40  [ main:108 ] - [ DEBUG ]  Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+2019-09-26 18:23:40  [ main:113 ] - [ DEBUG ]  hadoop login
+2019-09-26 18:23:40  [ main:114 ] - [ DEBUG ]  hadoop login commit
+2019-09-26 18:23:40  [ main:117 ] - [ DEBUG ]  using local user:NTUserPrincipal: wangshengyu1
+2019-09-26 18:23:40  [ main:117 ] - [ DEBUG ]  Using user: "NTUserPrincipal: wangshengyu1" with name wangshengyu1
+2019-09-26 18:23:40  [ main:117 ] - [ DEBUG ]  User entry: "wangshengyu1"
+2019-09-26 18:23:40  [ main:118 ] - [ DEBUG ]  UGI loginUser:wangshengyu1 (auth:SIMPLE)
+2019-09-26 18:23:40  [ main:236 ] - [ DEBUG ]  dfs.client.use.legacy.blockreader.local = false
+2019-09-26 18:23:40  [ main:236 ] - [ DEBUG ]  dfs.client.read.shortcircuit = false
+2019-09-26 18:23:40  [ main:236 ] - [ DEBUG ]  dfs.client.domain.socket.data.traffic = false
+2019-09-26 18:23:40  [ main:236 ] - [ DEBUG ]  dfs.domain.socket.path = 
+2019-09-26 18:23:40  [ main:248 ] - [ DEBUG ]  No KeyProvider found.
