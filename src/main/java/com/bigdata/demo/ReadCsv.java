@@ -12,14 +12,14 @@ import java.util.List;
  */
 public class ReadCsv {
     public static void main(String[] args) throws Exception {
-        File file = new File("C:\\Users\\wangshengyu1\\Desktop\\test.txt");
+        File file = new File("C:\\Users\\wangshengyu1\\Desktop\\result\\qiye1.txt");
         StringBuffer sb = new StringBuffer();
         List list = new ArrayList();
         InputStreamReader reader = new InputStreamReader(new FileInputStream(file));
         BufferedReader br = new BufferedReader(reader);
         String line = "";
         while((line = br.readLine()) != null){
-            String[] split = line.split(" ");
+            String[] split = line.split("\\|");
             list.add(split[0]);
         }
         for(Object a: list){
