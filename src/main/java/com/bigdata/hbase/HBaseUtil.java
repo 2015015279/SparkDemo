@@ -159,7 +159,7 @@ public class HBaseUtil {
     }
 
     /**
-     *can 检索数据，控制startrow，stoprow 注意包括startrow 不包括stoprow，
+     *scan 检索数据，控制startrow，stoprow 注意包括startrow 不包括stoprow，
      * @param tableName
      * @param startKey
      * @param stopKey

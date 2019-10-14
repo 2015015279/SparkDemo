@@ -26,7 +26,8 @@ public class HBaseTest {
     @Before
     public void init() throws Exception {
         config = HBaseConfiguration.create();
-        config.set("hbase.zookeeper.quorum", "192.168.183.136,192.168.183.137,192.168.183.140");
+        config.set("hbase.zookeeper.quorum", "192.168.157.139,192.168.157.140,192.168.157.141");
+//        config.set("hbase.zookeeper.quorum", "192.168.183.136,192.168.183.137,192.168.183.140");
         config.set("hbase.zookeeper.property.clientPort", "2181");
         connection = ConnectionFactory.createConnection();
         admin = connection.getAdmin();
@@ -91,19 +92,11 @@ public class HBaseTest {
         //创建 put，并制定 put 的Rowkey
         Put put = new Put(Bytes.toBytes("zhangsan"));
         //byte [] family, byte [] qualifier, byte [] value
-//        put.addColumn(Bytes.toBytes("student"), Bytes.toBytes("age"), Bytes.toBytes(18));
-//        put.addColumn(Bytes.toBytes("student"), Bytes.toBytes("sex"), Bytes.toBytes("男"));
-//        put.addColumn(Bytes.toBytes("student"), Bytes.toBytes("city"), Bytes.toBytes("beijing"));
-//        put.addColumn(Bytes.toBytes("student"), Bytes.toBytes("address"), Bytes.toBytes("henan"));
         put.addColumn(Bytes.toBytes("info"), Bytes.toBytes("hobby"), Bytes.toBytes("girl"));
         put.addColumn(Bytes.toBytes("info"), Bytes.toBytes("good"), Bytes.toBytes("basketball"));
 
         Put put1 = new Put(Bytes.toBytes("lisi"));
         // family ,qualifier, value  顺序不可乱，列族，列，内容
-        put1.addColumn(Bytes.toBytes("student"), Bytes.toBytes("age"), Bytes.toBytes(22));
-        put1.addColumn(Bytes.toBytes("student"), Bytes.toBytes("sex"), Bytes.toBytes("女"));
-        put1.addColumn(Bytes.toBytes("student"), Bytes.toBytes("city"), Bytes.toBytes("nanjing"));
-        put1.addColumn(Bytes.toBytes("student"), Bytes.toBytes("address"), Bytes.toBytes("hebei"));
         put1.addColumn(Bytes.toBytes("info"), Bytes.toBytes("hobby"), Bytes.toBytes("boy"));
         put1.addColumn(Bytes.toBytes("info"), Bytes.toBytes("good"), Bytes.toBytes("ball"));
 
@@ -111,7 +104,7 @@ public class HBaseTest {
         list.add(put);
         list.add(put1);
 
-        table.put(put1);
+        table.put(put);
     }
 
 
@@ -128,10 +121,10 @@ public class HBaseTest {
         System.out.println("Rowkey\t列族\t列名\t内容");
         for (Cell cell : result.rawCells()) {
             System.out.println(
-                    Bytes.toString(CellUtil.cloneRow(cell)) + "\t" +  //Rowkey
-                            Bytes.toString(CellUtil.cloneFamily(cell)) + "\t" + //CF
-                            Bytes.toString(CellUtil.cloneQualifier(cell)) + "\t" +//qualifier
-                            Bytes.toString(CellUtil.cloneValue(cell)) //value
+                    Bytes.toString(CellUtil.cloneRow(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneFamily(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneQualifier(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneValue(cell))
             );
         }
     }
@@ -174,10 +167,10 @@ public class HBaseTest {
     private void PrintResult(Result result) {
         for (Cell cell :result.rawCells()) {
             System.out.println(
-                    Bytes.toString(CellUtil.cloneRow(cell)) + "\t" +//Rowkey
-                            Bytes.toString(CellUtil.cloneFamily(cell)) + "\t" +//CF
-                            Bytes.toString(CellUtil.cloneQualifier(cell)) + "\t" +//qualifier
-                            Bytes.toString(CellUtil.cloneValue(cell)) //value
+                    Bytes.toString(CellUtil.cloneRow(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneFamily(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneQualifier(cell)) + "\t" +
+                            Bytes.toString(CellUtil.cloneValue(cell))
             );
         }
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -262,10 +255,10 @@ public class HBaseTest {
      */
     @Test
     public void DropTable() throws Exception {
-        table = connection.getTable(TableName.valueOf("test3"));
-        if (admin.tableExists(TableName.valueOf("test3"))) {
-            admin.disableTable(TableName.valueOf("test3"));
-            admin.deleteTable(TableName.valueOf("test3"));
+        table = connection.getTable(TableName.valueOf("school"));
+        if (admin.tableExists(TableName.valueOf("school"))) {
+            admin.disableTable(TableName.valueOf("school"));
+            admin.deleteTable(TableName.valueOf("school"));
             System.out.println("删除成功");
         } else {
             System.out.println("表不存在");

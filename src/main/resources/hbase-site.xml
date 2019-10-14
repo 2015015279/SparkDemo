@@ -1,6 +1,32 @@
+
+<!--<configuration>-->
+<!--<property>-->
+    <!--&lt;!&ndash; 指定 hbase 在 HDFS 上存储的路径 &ndash;&gt;-->
+    <!--<name>hbase.rootdir</name>-->
+    <!--<value>hdfs://master:9000/hbase</value>-->
+<!--</property>-->
+<!--<property>-->
+    <!--&lt;!&ndash; 指定 hbase 是分布式的 &ndash;&gt;-->
+    <!--<name>hbase.cluster.distributed</name>-->
+    <!--<value>true</value>-->
+<!--</property>-->
+<!--<property>-->
+    <!--&lt;!&ndash; 指定 zk 的地址，多个用“,”分割 &ndash;&gt;-->
+    <!--<name>hbase.zookeeper.quorum</name>-->
+    <!--<value>master:2181,slave1:2181,slave2:2181</value>-->
+<!--</property>-->
+<!--<property>-->
+    <!--<name>hbase.master.info.port</name>-->
+    <!--<value>60010</value>-->
+<!--</property>-->
+<!--<property>-->
+    <!--<name>hbase.zookeeper.property.clientPort</name>-->
+    <!--<value>2181</value>-->
+<!--</property>-->
+<!--</configuration>-->
 <configuration>
     <property>
-        <!-- 指定 hbase 在 HDFS 上存储的路径 -->
+        <!-- 指定 hbase 在 HDFS 上存储的路径 (主备映射)-->
         <name>hbase.rootdir</name>
         <value>hdfs://master:9000/hbase</value>
     </property>
@@ -18,8 +44,5 @@
         <name>hbase.master.info.port</name>
         <value>60010</value>
     </property>
-    <property>
-        <name>hbase.zookeeper.property.clientPort</name>
-        <value>2181</value>
-    </property>
 </configuration>
+
