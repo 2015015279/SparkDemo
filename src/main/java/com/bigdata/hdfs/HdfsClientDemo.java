@@ -33,7 +33,7 @@ public class HdfsClientDemo {
         //拿到一个文件系统操作的客户端实例对象
         fs = FileSystem.get(conf);
         //可以直接传入 uri和用户身份
-        fs = FileSystem.get(new URI("hdfs://mini1:9000"),conf,"hadoop");
+        fs = FileSystem.get(new URI("hdfs://master:9000"),conf,"hadoop");
     }
 
     /**
@@ -43,7 +43,7 @@ public class HdfsClientDemo {
     @Test
     public void testUpload() throws Exception {
 
-        fs.copyFromLocalFile(new Path("c:/access.log"), new Path("/access.log.copy"));
+        fs.copyFromLocalFile(new Path("C:\\Users\\wangshengyu1\\Desktop\\test.txt"), new Path("/test.log.copy"));
         fs.close();
     }
 
