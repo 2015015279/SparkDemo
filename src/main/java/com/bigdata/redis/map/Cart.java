@@ -18,7 +18,7 @@ public class Cart {
     private Jedis jedis;
 
     public Cart() {
-        jedis = new Jedis("127.0.0.1", 6379);
+        jedis = new Jedis("192.168.183.136", 6379);
     }
 
     public Cart(Jedis jedis) {
@@ -89,7 +89,7 @@ public class Cart {
 
     private static void initData() {
         System.out.println("========================初始化商品信息===========================");
-        Jedis jedis = new Jedis("127.0.0.1", 6379);
+        Jedis jedis = new Jedis("192.168.183.136", 6379);
         //准备数据
         Product product1 = new Product("1645139266", "战地鳄2015秋冬新款马甲可脱卸帽休闲时尚无袖男士羽绒棉外套马甲", new BigDecimal("168"));
         Product product2 = new Product("1788744384", "天乐时 爸爸装加厚马甲秋冬装中年大码男士加绒马夹中老年坎肩老年人", new BigDecimal("40"));
